@@ -39,6 +39,12 @@ signIn(){
     this.router.navigateByUrl('welcome');
   }
 
+  if (res.success && res.result.data != null) {
+    localStorage.setItem('firstName', res.result.data.firstName)
+    localStorage.setItem('roleName', res.result.data.roleName)
+    this.router.navigateByUrl('welcome');
+  }
+
   })
 
 }
